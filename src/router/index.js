@@ -25,6 +25,13 @@ const router = createRouter({
       redirect: '/'
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition; // Restore previous scroll position on back/forward
+    } else {
+      return { top: 0, left: 0 }; // Scroll to top for new navigations
+    }
+  },
 })
 
 export default router
