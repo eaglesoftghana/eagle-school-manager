@@ -6,6 +6,27 @@
   font-style: normal;
   font-display: swap;
 }
+.light,
+:root {
+  color-scheme: light;
+  --background: var(--color-gray-200);
+  --text: var(--color-gray-700);
+}
+
+/* The .dark class overrides the :root variables */
+.dark {
+  color-scheme: dark;
+  --background: var(--color-gray-900);
+  --text: var(--color-gray-300);
+}
+
+@utility text-body {
+  color: var(--text);
+}
+@utility bg-body {
+  background-color: var(--background);
+}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --default-font-family: 'Open Sans', 'sans-serif';
@@ -13,6 +34,64 @@
   --color-primary-dark: #00332e;
   --color-primary-light: #336b66;
 }
-@layer base;
-@layer components;
+
+@layer base {
+  html,
+  body {
+    @apply bg-body text-body;
+  }
+  #app {
+    height: 100%;
+  }
+}
+@layer components {
+  .star {
+    width: calc(var(--spacing) * 8.5);
+    height: calc(var(--spacing) * 8.5);
+    background: oklab(37.555% -0.06985 0.00436 / 0.342);
+    border-radius: 12px;
+    /* background: oklab(48.051% -0.0298 -0.29255); */
+    -webkit-filter: drop-shadow(15px 8px 4px oklab(37.555% -0.06985 0.00436 / 0.342));
+    filter: drop-shadow(15px 8px 4px oklab(37.555% -0.06985 0.00436 / 0.342));
+  }
+  @variant dark {
+  }
+  .stars {
+    position: fixed;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+  }
+  .stars1 {
+    position: fixed;
+    top: 15%;
+    left: 35%;
+    z-index: 0;
+  }
+  .stars2 {
+    position: fixed;
+    bottom: 50%;
+    left: 25%;
+    z-index: 0;
+  }
+  .stars3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+  }
+  .stars4 {
+    position: fixed;
+    bottom: 20%;
+    right: 25%;
+    z-index: 0;
+  }
+  .stars5 {
+    position: fixed;
+    top: 25%;
+    right: 25%;
+    z-index: 0;
+  }
+}
+
 @layer utilities;
