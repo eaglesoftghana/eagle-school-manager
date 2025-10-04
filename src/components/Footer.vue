@@ -9,8 +9,9 @@ import { MailIcon, PhoneCallIcon } from 'lucide-vue-next';
       <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
 
         <div class="col-span-2 md:col-span-1">
+        <img src="/esm.esm.webp" width="50" alt="esm logo"/>
           <h4 class="text-lg capitalize font-bold text-primary mb-4">
-            eagle school manager
+            eagle•school•manager
           </h4>
           <p class="text-sm">
             The all-in-one enhanced school management system designed for modern schools, simplifying administration

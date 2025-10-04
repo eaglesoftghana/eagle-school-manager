@@ -6,6 +6,7 @@ const links = ref(['features', 'pricing', 'request-a-demo']);
 
 const activeSection = ref(null);
 
+const isScrolling = ref(false)
 
 const handleScroll = () => {
   // Define an offset for when a section is considered "active"
@@ -33,6 +34,11 @@ const handleScroll = () => {
     if (window.location.hash !== `#${visibleSection}`) {
       history.replaceState(null, '', `#${visibleSection}`);
     }
+  }
+  if (scrollY > 50) {
+    isScrolling.value = true
+  } else {
+    isScrolling.value = false
   }
 };
 
@@ -99,11 +105,12 @@ function hideMenu(event) {
 </script>
 
 <template>
-  <header
-    class="min-h-[50px] flex items-center justify-between w-full p-2 bg-primary text-white rounded-md my-4 sticky top-0 max-[992px]:my-0 max-[992px]:rounded-none! mx-auto z-40">
+  <header :class="{ 'bg-primary/25 backdrop-blur-[5px]': isScrolling }"
+    class="min-h-[50px] flex items-center justify-between w-full p-2 text-white rounded-md my-4 sticky top-0 max-[992px]:my-0 max-[992px]:rounded-none! mx-auto z-40">
     <div class="brand">
-      <a to="/" class="uppercase font-semibold" @click.prevent="scrollToSection('home')">
-        eagle school manager
+      <a to="/" class="uppercase font-semibold flex items-center gap-2" @click.prevent="scrollToSection('home')">
+        <img src="/esm.esm.webp" width="50" alt="esm logo"/>
+        eagle•school•manager
       </a>
     </div>
     <div class="max-[768px]:hidden">
@@ -114,17 +121,18 @@ function hideMenu(event) {
           </a>
         </li>
         <li>
-          <div class="flex items-center gap-3">
-            <a href="//app.eagleschoolmanager.com/login" title="Login to eagle school manager"
-              class="outline outline-white p-2 rounded-md">
-              log in
-            </a>
-            <a href="#pricing" class="bg-white p-2 rounded-md text-primary">
-              get started
-            </a>
-          </div>
+
         </li>
       </ul>
+    </div>
+    <div class="flex items-center gap-3 max-[768px]:hidden">
+      <a href="//app.eagleschoolmanager.com/login" title="Login to eagle school manager"
+        class="outline outline-white p-2 rounded-md">
+        log in
+      </a>
+      <a href="#pricing" class="bg-white p-2 rounded-md text-primary">
+        get started
+      </a>
     </div>
 
     <Transition name="menu" mode="out-in">

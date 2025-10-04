@@ -40,7 +40,7 @@ const features = [
   },
   {
     icon: UsersIcon,
-    heading: 'guardian & parent app',
+    heading: 'guardian/parent app',
     text: "Bridge the gap between school and home. Gives parents secure, real-time access to their child's attendance, progress, school calendar, and direct communication."
   },
   {
