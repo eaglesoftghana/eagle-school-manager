@@ -105,11 +105,11 @@ function hideMenu(event) {
 </script>
 
 <template>
-  <header :class="{ 'bg-primary/25 backdrop-blur-[5px]': isScrolling }"
-    class="min-h-[50px] flex items-center justify-between w-full p-2 text-white rounded-md my-4 sticky top-0 max-[992px]:my-0 max-[992px]:rounded-none! mx-auto z-40">
+  <header :class="{ 'darK:bg-primary/45 backdrop-blur-[5px] dark:text-white text-body bg-body shadow': isScrolling }"
+    class="min-h-[50px] max-[768px]:px-6 flex items-center justify-between  w-full p-2  rounded-md my-4 sticky top-0 max-[992px]:my-0 max-[992px]:rounded-none! mx-auto z-40">
     <div class="brand">
       <a to="/" class="uppercase font-semibold flex items-center gap-2" @click.prevent="scrollToSection('home')">
-        <img src="/esm.esm.webp" width="50" alt="esm logo"/>
+        <img src="/esm.esm.webp" width="50" alt="esm logo" />
         eagle•school•manager
       </a>
     </div>
@@ -127,17 +127,18 @@ function hideMenu(event) {
     </div>
     <div class="flex items-center gap-3 max-[768px]:hidden">
       <a href="//app.eagleschoolmanager.com/login" title="Login to eagle school manager"
-        class="outline outline-white p-2 rounded-md">
+        class="outline outline-primary p-2 rounded-md capitalize">
         log in
       </a>
-      <a href="#pricing" class="bg-white p-2 rounded-md text-primary">
+      <a href="#pricing" class="bg-primary p-2 rounded-md text-white capitalize">
         get started
       </a>
     </div>
 
     <Transition name="menu" mode="out-in">
       <div v-if="isMenuShown" class="menu-layer fixed top-[54px] right-0 z-50">
-        <ul class="menu flex flex-col gap-3 items-start capitalize p-4 mx-2 bg-primary rounded-md shadow-2xl z-50">
+        <ul
+          class="menu flex flex-col gap-3 items-start capitalize p-4 mx-6 bg-body text-body rounded-md shadow-2xl relative dark:border dark:border-gray-800">
           <li v-for="link in links">
             <a @click.prevent="scrollToSection(link)" :href="`#${link}`">
               {{ link.replace(/-/g, ' ') }}
@@ -146,10 +147,10 @@ function hideMenu(event) {
           <li>
             <div class="flex flex-col items-start gap-3 w-full">
               <a href="//app.eagleschoolmanager.com/login" title="Login to eagle school manager"
-                class="outline outline-white py-2 px-8.5 rounded-md">
+                class="outline outline-primary text-primary dark:text-white dark:outline-gray-400 bg-body py-2 px-8.5 rounded-md shadow-md">
                 log in
               </a>
-              <a href="#pricing" class="bg-white py-2 px-4 w-full rounded-md text-primary">
+              <a href="#pricing" class="bg-primary py-2 px-4 w-full rounded-md shadow-md text-white">
                 get started
               </a>
             </div>

@@ -59,19 +59,24 @@ const pricingList = [
   {
     planName: 'basic plan',
     description: "Perfect for efficient management of core administrative tasks and student records on a budget.",
-    price: 468,
+    price: 572,
     features: [{
       name: "up to 260 students",
       value: 260,
       addOn: false,
     },
     {
-      name: "up to 25 **staff members",
+      name: "up to 25 staff members",
       value: 260,
       addOn: false,
     },
     {
       name: "custom SMS sender ID",
+      value: true,
+      addOn: false,
+    },
+    {
+      name: "custom Email",
       value: true,
       addOn: false,
     },
@@ -85,19 +90,24 @@ const pricingList = [
   {
     planName: 'standard plan',
     description: "Complete System for growing mid-sized schools. Unlock the full power of all modules with increased data capacity and support.",
-    price: 702,
+    price: 975,
     features: [{
-      name: "up to 390 **students",
+      name: "up to 390 students",
       value: 390,
       addOn: false,
     },
     {
-      name: "up to 35 **staff members",
+      name: "up to 35 staff members",
       value: true,
       addOn: true,
     },
     {
       name: "custom SMS sender ID",
+      value: true,
+      addOn: false,
+    },
+    {
+      name: "custom Email",
       value: true,
       addOn: false,
     },
@@ -116,19 +126,24 @@ const pricingList = [
   {
     planName: 'professional plan',
     description: "Get the complete suite, built to handle a high volume of student and guardian activity with ease.",
-    price: 1053,
+    price: 1755,
     features: [{
-      name: "upto 585 **students",
+      name: "upto 585 students",
       value: true,
       addOn: false,
     },
     {
-      name: "up to 45 **staff members",
+      name: "up to 45 staff members",
       value: true,
       addOn: true,
     },
     {
       name: "custom SMS sender ID",
+      value: true,
+      addOn: false,
+    },
+    {
+      name: "custom Email",
       value: true,
       addOn: false,
     },
@@ -148,19 +163,24 @@ const pricingList = [
   {
     planName: 'premium plan',
     description: "Maximum Capacity: Enjoy the full system with custom integrations and top-tier technical support.",
-    price: 1350,
+    price: 2625,
     features: [{
-      name: "up to 750 **students",
+      name: "up to 750 students",
       value: true,
       addOn: true,
     },
     {
-      name: "up to 60 **Staff Members",
+      name: "up to 60 Staff Members",
       value: true,
       addOn: true,
     },
     {
       name: "custom SMS sender ID",
+      value: true,
+      addOn: false,
+    },
+    {
+      name: "custom Email",
       value: true,
       addOn: false,
     },
@@ -211,15 +231,15 @@ const pricingList = [
   </div>
   <div class="flex justify-center items-center gap-4 mt-8 px-6 min-[768px]:px-3">
     <a href="#pricing"
-      class="capitalize text-white border-gray-600 dark:outline dark:outline-gray-500 px-4 py-2 rounded-md transition-all duration-300 ease-in-out  bg-gradient-to-r from-primary-light to-gray-900">
+      class="capitalize text-white border-gray-600 dark:outline dark:outline-gray-500 px-4 py-2 rounded-md transition-all duration-300 ease-in-out  bg-gradient-to-r from-primary-light to-gray-900 shadow-md">
       get started
     </a>
-    <a href="#" class="capitalize outline dark:outline-gray-400 px-4 py-2 rounded-md dark:text-white">
+    <a href="#" class="capitalize outline bg-body shadow-md dark:outline-gray-400 px-4 py-2 rounded-md dark:text-white">
       watch demo
     </a>
   </div>
   <div class="flex items-center justify-center px-6 min-[768px]:px-3 mt-8">
-    <img :src="Cover" alt="" @contextmenu.prevent="return" @dblclick.prevent="return" />
+    <img :src="Cover" alt="" @drag.prevent="return" @contextmenu.prevent="return" @dblclick.prevent="return" />
   </div>
   <div class="mt-25 px-6 min-[768px]:px-3" id="features">
     <h4 class="font-semibold text-center text-2xl capitalize">
